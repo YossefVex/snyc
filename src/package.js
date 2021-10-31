@@ -1,11 +1,8 @@
-// import { RequestHandler } from 'express';
 import got from 'got';
-// import { NPMPackage } from './types';
 import Semver from 'semver';
 
 const getPackageAPI = async (name, version) => {
 	try {
-		// const npmPackage: NPMPackage = await got(`https://registry.npmjs.org/${name}`).json();
 		const npmPackage = await got(`https://registry.npmjs.org/${name}`).json();
 
 		return npmPackage?.versions[version].dependencies;
